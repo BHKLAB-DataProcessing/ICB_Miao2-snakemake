@@ -48,7 +48,8 @@ rule format_cna_seg:
         S3.remote(prefix + "processed/CNA_seg.txt")
     input:
         S3.remote(prefix + "processed/cased_sequenced.csv"),
-        S3.remote(prefix + "download/CNA_seg.txt.gz")
+        S3.remote(prefix + "download/CNA_seg.txt.gz"),
+        S3.remote(prefix + "download/gistic/all_thresholded.by_genes.txt.gz")
     shell:
         """
         Rscript scripts/Format_CNA_gene.R \

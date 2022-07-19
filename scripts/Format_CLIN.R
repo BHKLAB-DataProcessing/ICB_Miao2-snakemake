@@ -16,7 +16,7 @@ clin$drug_type = ifelse( clin$drug_type %in% "anti-CTLA-4" , "CTLA4" ,
 					ifelse( clin$drug_type %in% "anti-CTLA-4 + anti-PD-1/PD-L1", "Combo" , "PD-1/PD-L1" ))
 clin$sex = ifelse(clin$sex %in% "FEMALE" , "F" , "M")
 
-clin$t.os = clin$t.os/30.5
+clin$t.os = as.numeric(clin$t.os)/30.5
 clin$t.pfs = clin$t.pfs/30.5
 
 clin$recist[ clin$recist %in% "X" ] = NA 
